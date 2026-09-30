@@ -1,0 +1,142 @@
+# Exported from Render on 2026-09-30T20:19:34Z
+version: "1"
+projects:
+- name: Socado
+  environments:
+  - name: production
+    services:
+    - type: web
+      name: ' socado-prod-api'
+      runtime: node
+      repo: https://github.com/Socado/socado-cima
+      plan: standard
+      envVars:
+      - key: SENTRY_DSN_OFF
+        sync: false
+      - key: DATABASE
+        sync: false
+      - key: REPORT_TOKEN
+        sync: false
+      - key: REPORT_TOKEN_SECRET
+        sync: false
+      - key: FIREBASE_FCM_URL
+        sync: false
+      - key: FIREBASE_GOOGLEAPIS_SCOPE
+        sync: false
+      - key: FIREBASE_UNIVERSE_DOMAIN
+        sync: false
+      - key: FIREBASE_CLIENT_X509_CERT_URL
+        sync: false
+      - key: FIREBASE_AUTH_PROVIDER_X509_CERT_URL
+        sync: false
+      - key: FIREBASE_TOKEN_URI
+        sync: false
+      - key: FIREBASE_AUTH_URI
+        sync: false
+      - key: FIREBASE_CLIENT_ID
+        sync: false
+      - key: FIREBASE_CLIENT_EMAIL
+        sync: false
+      - key: FIREBASE_PRIVATE_KEY
+        sync: false
+      - key: FIREBASE_PRIVATE_KEY_ID
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: FIREBASE_TYPE
+        sync: false
+      - key: UNIVERSE_DOMAIN
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_PUBLIC_KEY
+        sync: false
+      - key: STRIPE_PRIVATE_KEY
+        sync: false
+      - key: SECRET
+        sync: false
+      - key: PROJECT_ID
+        sync: false
+      - key: PRIVATE_KEY_ID
+        sync: false
+      - key: POSTMARK_API_KEY
+        sync: false
+      - key: POSTHOG_HOST
+        sync: false
+      - key: POSTHOG_API_KEY
+        sync: false
+      - key: PORT
+        sync: false
+      - key: NODE_VERSION
+        sync: false
+      - key: NODE_ENV
+        sync: false
+      - key: MONGOOSE_ONLY
+        sync: false
+      - key: LOKI_USERNAME
+        sync: false
+      - key: LOKI_PASSWORD
+        sync: false
+      - key: LOKI_HOST
+        sync: false
+      - key: LOKI_APP_NAME
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: HOST
+        sync: false
+      - key: GOOGLEAPIS_SCOPE
+        sync: false
+      - key: FCM_URL
+        sync: false
+      - key: EXCHANGE_RATE_API_URL
+        sync: false
+      - key: EXCHANGE_RATE_API_TOKEN
+        sync: false
+      - key: DASHBOARD_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: CLIENTE_ID
+        sync: false
+      - key: CLIENTE_EMAIL
+        sync: false
+      - key: CLIENT_X509_CERT_URL
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: CIMA_URL
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_REGION
+        sync: false
+      - key: AWS_ENDPOINT
+        sync: false
+      - key: AWS_BUCKET_NAME
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AUTH_URI
+        sync: false
+      - key: AUTH_PROVIDER_X509_CERT_URL
+        sync: false
+      - key: ALGOLIA_PRIVATE_KEY
+        sync: false
+      - key: ALGOLIA_APP_ID
+        sync: false
+      - key: TYPE
+        sync: false
+      - key: TOKEN_URI
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false
+      - key: PRIVATE_KEY
+        sync: false
+      region: ohio
+      buildCommand: npm i --prefix=../.. --production=false; npx turbo run build --filter=@socado/api
+      startCommand: npm start
+      domains:
+      - api.cima-studio.com
+      autoDeployTrigger: "off"
+      rootDir: apps/api
