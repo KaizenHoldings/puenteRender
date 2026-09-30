@@ -9,7 +9,6 @@ projects:
       name: ' socado-prod-api'
       runtime: node
       repo: https://github.com/Socado/socado-cima
-      plan: standard
       envVars:
       - key: SENTRY_DSN_OFF
         sync: false
